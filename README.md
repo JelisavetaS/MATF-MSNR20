@@ -1,4 +1,4 @@
-# Profajleri i njihova vizualizacija u jeziku Python
+# Profajleri i njihova vizualizacija za jezik Python
 Seminarski rad na predmetu Metodologija stručnog i naučnog rada.
 
 Profesorka: Milena Vujošević Janičić
