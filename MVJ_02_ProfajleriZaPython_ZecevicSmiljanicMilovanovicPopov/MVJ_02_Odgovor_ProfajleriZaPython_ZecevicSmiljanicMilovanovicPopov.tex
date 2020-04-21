@@ -1,0 +1,294 @@
+
+
+ % !TEX encoding = UTF-8 Unicode
+
+\documentclass[a4paper]{report}
+
+\usepackage[T2A]{fontenc} % enable Cyrillic fonts
+\usepackage[utf8x,utf8]{inputenc} % make weird characters work
+\usepackage[serbian]{babel}
+%\usepackage[english,serbianc]{babel}
+\usepackage{amssymb}
+
+\usepackage{color}
+\usepackage{url}
+\usepackage[unicode]{hyperref}
+\hypersetup{colorlinks,citecolor=green,filecolor=green,linkcolor=blue,urlcolor=blue}
+
+\newcommand{\odgovor}[1]{\textcolor{blue}{#1}}
+
+\begin{document}
+
+\title{Profajleri i njihova vizualizacija za jezik Python\\ \small{Anđelka Milovanović, David Popov \\
+Jelisaveta Smiljanić, Petar Zečević \\}}
+
+\maketitle
+
+\tableofcontents
+
+\chapter{Recenzent \odgovor{--- ocena: 5} }
+
+\section{O čemu rad govori?}
+% Напишете један кратак пасус у којим ћете својим речима препричати суштину рада (и тиме показати да сте рад пажљиво прочитали и разумели). Обим од 200 до 400 карактера.
+Rad govori o profajliranju, posebno govori o onim profajlerima koji se mogu koristiti za jezik Python. Glavni deo rada priča o osobinama i načinu upotrebe odabranih alata, koji uključuju i alate za vizualizaciju podataka koji se dobijaju profajliranjem. Čitanjem se takođe stiče osnovno znanje o profajliranju.
+\section{Krupne primedbe i sugestije}
+% Напишете своја запажања и конструктивне идеје шта у раду недостаје и шта би требало да се промени-измени-дода-одузме да би рад био квалитетнији.
+Prečesto se pominju komande koje je potrebno pokrenuti da bi se instalirali programi i ostalo. Većina je preko komande pip, ne mora se svaki put navoditi kako se poziva. Komanda \verb|sudo apt-get| se odnosi samo na Ubuntu, koji koristi manjina ljudi i računara. Previše je primera poziva programa, ponavljajuju se isti (npr. za Pycallgraph je dva puta dat poziv za test.py, sa samo jednom opcijom promenjenom). Po mom mišljenju se od čitaoca može očekivati da sami mogu instalirati programe, možda je korisna smernica tipa ,,može se koristiti pip'', ili je potrebno ta i ta biblioteka, ali nema potrebe davati uputstva kako tu biblioteku instalirati.\\
+\odgovor{Izbačena su objašnjenja kako se alati instaliraju. Dodate su reference na zvanične sajtove alata kako bi čitalac sam to mogao da vidi. Izbačena je sudo apt-get komanda i dodata je referenca na zvanični sajt GraphViza kako bi čitalac sam mogao da vidi kako se instalira za bilo koji operativni sistem. Izbačen je jedan od kodova za pokretanje Pycallgraph alata. Nismo izbrisali komande za pokretanje alata jer smatramo da je čitljivije da sve pišu na jednom mesto nego da čitalac mora da traži po literaturi. Pokretanje alata nije isto za sve alate (kao što je instaliranje) i većina čitalaca verovatno ne zna kako se koji alat pokreće.}
+
+Dosta se zalazi u detalje i nisu uvek najbolje prezentovani. Bolja prezentacija bi značajno poboljšala rad.\\
+\odgovor{Skraćeni su delovi o alatima za vizualizaciju tako što se ne priča o instalacijama čime se manje ulazi u detalje. Neki naslovi su izbrisani i spojeni u jedan da bi rad bio čitljiviji.}
+
+4.1.1 -- ,,Py-Spy je uzorački profajler, što znači da program mora da bude u toku izvršavanja kada se alat pokrene.'' -- Ne mora značiti da ako je profajler statistički da se mora pokrenuti nad programom u izvršavanju. U tekstu je dat primer pokretanja Py-spy-a sa programom koji treba pokrenuti i ja sam ga koristio tako u testiranju.\\
+\odgovor{Greška. Trebalo je da piše da je to mogućnost. Ispravljeno.}
+
+4.1.1 -- ,,...već se izvršava u zasebnom programu čime smanjuje vreme izvršavanja i ne ometa rad programa ni na jedan način '' -- Da li izvršavanje u drugom programu skraćuje realno vreme? Da li je ,,ne ometa ni na jedan način'' ovde ispravno značenje?\\
+\odgovor{Nije potvrđeno da se zaista skraćuje realno vreme, već samo vreme trajanja samog programa. Iz tog razloga je izbačeno kao karakteristika. Ne ometa ni na jedan način u smislu da se izvršava zasebno. Zbog nerazumljivosti je izbačeno.}
+
+4.2.1 -- ,,SnakeViz nije u mogućnosti da podrži velike profile zbog poteškoća reprezentovanja ogromnih stabala pomoću JSON niski. Za sada se smatra da SnakeViz može da podrži stabla sa manje od nekoliko hiljada čvorova. Medutim, iako ne uspe da napravi vizualizaciju i dalje će se dobiti potpuna tabela statistika. To znači da neuspeh vizualizacije SnakeViz alata ne utiče na samo izvršavanje profajliranja [15].'' -- Ovo referiše na blog developera koji navodi ovakav problem kao trenutno aktivan u septembru 2012. Alat je imao više verzija posle toga i nije jasno da je ova informacija aktuelna. Rečenica na kraju, ,,To znači da...'', je suvišna, jer se profajliranje izvršava pre vizualizacije.\\
+\odgovor{Greška. Nije uzeto u obzir da je problem potencijalno popravljen. Pasus potpuno izbačen.}
+
+\section{Sitne primedbe}
+% Напишете своја запажања на тему штампарских-стилских-језичких грешки
+Tabela 1 po mom mišljenju nije najlepše formatirana i napisana\ldots Ne mora biti ime kolone boldovano i pisano velikim slovima.\\
+\odgovor{Ime kolone više nije velikim slovima (samo je prvo slovo veliko). Ostavljeno je podebljano zato što se u suprotnom ne vidi jasno da je reč o imenu kolone.}\\
+Nije potrebno za svaku sekciju ,,Karakteristike alata'' i ,,Primer primene'' postavljati broj kada se ne pojavljuju u sadržaju.\\
+\odgovor{Sekcije su spojene u jednu veliku sekciju.}\\
+Tekst na slici 7 je previše sitan.\\
+\odgovor{Smanjena je dubina grafa i povećana je slika.}\\
+\noindent
+Sažetak -- profajlere u programskom jeziku Python -- za jezik Python\\
+\odgovor{Ispravljeno.}\\
+gprof2dot -- Gprof2dot se često piše malim slovima i nije jasno zašto.\\
+\odgovor{U dokumentaciji, kao i na svim drugim mestima, piše malim slovima.}\\
+1 -- za ovakve promene -- primene.\\
+\odgovor{Treba da piše promene, jer je optimizacija promena nad kodom.}\\
+1 -- determinitstičke -- determinističke.\\
+\odgovor{Izmenjeno.}\\
+2 -- primer takvih profajliranja kroz jezik Python -- za Python ako se ne odnosi samo na cProfile deo.\\
+\odgovor{Prihvaćeno i izmenjeno.}\\
+2 -- IP (eng. Instruction Pointer) -- ne predstavlja se novi termin na engleskom pa možda ,,eng.'' nije potrebno\\
+slično važi za PID dalje u tekstu.\\
+\odgovor{Smatramo da treba da stoji eng. jer mora da se naglasi da je u pitanju termin na engleskom jeziku.}\\
+3 -- u Python 3 -- u Python-u 3\\
+\odgovor{Ispravljeno, ali po srpskom pravilu za latinicu treba "Pythonu".}\\
+3.1 -- se postiže komandama: -- treba staviti referencu na primer pošto ne ide direktno nakon teksta.\\
+\odgovor{Popravljeno. Prepakovano je tako da komanda ide odmah nakon teksta.}\\
+4.2 -- \ldots{}profajliranja koji je generisan od strane cProfile modula - koje je generisano.\\
+\odgovor{Izmenjeno.}\\
+4.2.2 -- Iciclie - Icicle\\
+\odgovor{Izmenjeno.}\\
+4.2.2 -- Na slici 5 je dat primer koda nad kojim se testiraju vizualizacije -- na slici je vizualizacija, ne primer koda.\\
+\odgovor{Rečenica nije bila lepo formulisana. Izmenjena je.}\\
+4.4 -- (poslednji primer) \verb|$ gprof2dot.py| -- logičnije je gprof2dot, pošto pozivamo komandu u shellu.\\
+\odgovor{Izmenjeno.}\\
+4.4.2 -- Komandom iznad (4.4) poziva se gprof2dot -- ovde komanda nije direktno iznad pa nije jasno na šta se odnosi, može se na primer komanda staviti u primer okruženje u Latex-u ako se na nju želimo referisati, ili je staviti bliže tekstu. Treba preorganizovati.\\
+\odgovor{Prepravljeno tako da sad piše "Prethodnom komandom", čime je jasnije na koju se komandu odnosi.}\\
+4.4.2 -- ,,Sadržaj jednog čvora'', prateća lista i tekst su neugledni, može se koristiti isečak čvora iz vizualizacije kao primer, ovako nije lepo. Treba preorganizovati.\\
+\odgovor{Popravljeno tako što je u tekstu opisano šta jedan čvor sadrži. Lista izbačena.}\\
+4.4.2 -- rekruziju -- rekurziju\\
+\odgovor{Ispravljeno.}\\
+Literatura, referenca 10 -- (jifficlub) -- (jiffyclub)\\
+\odgovor{Ispravljeno.}\\
+Literatura, referenca 15 -- treba staviti ime autora, Matt Davis (jiffyclub)\\
+\odgovor{Referenca je izbačena.}\\
+Literatura, referenca 18 -- zašto je O'Reilly Media Inc. pod navodnicima?\\
+\odgovor{Bibtex je automatski postavio. Ispravljeno.}\\
+\section{Provera sadržajnosti i forme seminarskog rada}
+% Oдговорите на следећа питања --- уз сваки одговор дати и образложење
+
+\begin{enumerate}
+\item Da li rad dobro odgovara na zadatu temu?\\ Da. Rad u celini prilično odgovara na temu, tako što nas upoznaje sa alatima za profajliranje. Rad je primamljiv za čitanje.
+\item Da li je nešto važno propušteno?\\ Uglavnom, ne. Rad nije dovoljno usresređen na relevantnost i ispravnost informacija koje predstavlja. Prezentacija ima mana.
+\item Da li ima suštinskih grešaka i propusta?\\ Ne. Rad je suštinski korektan.
+\item Da li je naslov rada dobro izabran?\\ Delimično. ,,Profajleri i njihova vizualizacija u jeziku Python''. Trebalo bi da je pitanje o alatima \textbf{za} jezik Python. Inače, jeste, ali originalni naslov meni daje pogrešnu sliku.
+\item Da li sažetak sadrži prave podatke o radu?\\ Da. Sažetak sadrži tačan opis rada.
+\item Da li je rad lak-težak za čitanje?\\ Rad je uglavnom lak za čitanje, negde odstupa od toga.
+\item Da li je za razumevanje teksta potrebno predznanje i u kolikoj meri?\\ Uglavnom nije, većina ideja je objašnjeno u okviru rada. Potrebno je predznanje o programiranju i radu na računaru.
+\item Da li je u radu navedena odgovarajuća literatura?\\ Da, uglavnom. Izuzetak je referenca 5 koja je običan blog. Mislim da se može izostaviti, informacije koje referišu na nju se mogu naći na drugom mestu.\\
+\odgovor{Referenca je izbačena.}
+\item Da li su u radu reference korektno navedene?\\ Da. Reference vode ka opravdanju informacija u radu.
+\item Da li je struktura rada adekvatna?\\ Da. Rad je ispravne forme i tok rada je dobar.
+\item Da li rad sadrži sve elemente propisane uslovom seminarskog rada (slike, tabele, broj strana...)?\\ Da. Slike i tabele su tu, strane i potrebna literatura su tu.
+\item Da li su slike i tabele funkcionalne i adekvatne?\\ Uglavnom, da. Slike su uglavnom izlazi programa i urađene su uglavnom dobro. Tabela 1 predstavlja korisne informacije.
+\end{enumerate}
+
+\section{Ocenite sebe}
+% Napišite koliko ste upućeni u oblast koju recenzirate: 
+% a) ekspert u datoj oblasti
+% b) veoma upućeni u oblast
+c) srednje upućeni
+% d) malo upućeni 
+% e) skoro neupućeni
+% f) potpuno neupućeni
+% Obrazložite svoju odluku
+\\
+Ideja profajliranja mi je poznata, i iako nisam lično koristio ozbiljnije alate za profajliranje, video sam njihove izlaze i razumeo cilj njihove upotrebe pre čitanja rada.
+
+\chapter{Recenzent \odgovor{--- ocena: 3} }
+
+
+\section{O čemu rad govori?}
+% Напишете један кратак пасус у којим ћете својим речима препричати суштину рада (и тиме показати да сте рад пажљиво прочитали и разумели). Обим од 200 до 400 карактера.
+Profajliranje predstavlja jedan od načina analize programa i deli se na determinističko i statističko kao i na ona koja mere vremensko i prostorno opterećenje. U Python-u postoje moduli koji se mogu koristiti za profajliranje medju kojima je najkorišćeniji cProfile. Alati za vizualizaciju se koriste da bi podaci dobijeni profajliranjem bili čitljiviji.
+\section{Krupne primedbe i sugestije}
+% Напишете своја запажања и конструктивне идеје шта у раду недостаје и шта би требало да се промени-измени-дода-одузме да би рад био квалитетнији.
+Mislim da bi trebalo u radu dodati više informacija o tome šta se dešava "ispod haube" prilikom profajliranja u Python-u, tj. kako se profajler povezuje sa programom napisanim u Python-u i kako program i profajler razmenjuju informacije. \\
+\odgovor{Profajleri za Python po tom pitanju nisu karakteristični. Dodat je jedan pasus  na početku treće glave koji detaljnije opisuje kako profajleri za Python rade.}
+
+\section{Sitne primedbe}
+% Напишете своја запажања на тему штампарских-стилских-језичких грешки
+Pronađene su dve štamparske greške, prva je u uvodu, drugi pasus, strana 2, napisano je determinitstičke umesto determinističke, druga u poglavlju 4.4 Gprof2dot, deo 4.4.2 Primer primene, poslednja stavka u listi, strana 10, napisano je rekruziju umesto rekurziju.\\
+\odgovor{Obe greške ispravljene.}
+
+
+\section{Provera sadržajnosti i forme seminarskog rada}
+% Oдговорите на следећа питања --- уз сваки одговор дати и образложење
+
+\begin{enumerate}
+\item Da li rad dobro odgovara na zadatu temu?\\
+Mislim da rad odgovara na temu, objašnjeno je profajliranje uopšteno, osnovne podele profajliranja, kako se mogu profajlirati programi napisani u Python-u i dat je pregled najbitnijih alata koji se koriste za profajliranje zajedno sa primerima što čini rad izuzetno korisnim u smislu da ako neko želi da radi profajliranje nekog programa napisanog u Python-u, ovaj rad može biti početna tačka i može pomoći pri odabiru odgovarajućeg profajlera.
+\item Da li je nešto važno propušteno?\\
+Ne, autori su obradili sve bitne stavke vezane za ovu temu. 
+\item Da li ima suštinskih grešaka i propusta?\\
+Mislim da ništa suštinski važno nije propušteno zato što rad odgovara na pitanja na koja je trebalo da se odgovori prilikom zadavanja teme.
+\item Da li je naslov rada dobro izabran?\\
+Naslov rada je dobro izabran ako se uzme u obzir sadržaj rada. Ali ako se uzme u obzir zadata tema, mislim da su autori previše pažnje posvetili alatima za profajliranje u Python-u.
+\item Da li sažetak sadrži prave podatke o radu?\\
+Sažetak sadrži prave podatke o radu, kratak je, jasan i opisani su glavni ciljevi rada.
+\item Da li je rad lak-težak za čitanje?\\
+Rad je lak za čitanje, svi alati opisani u radu su predstavljeni i objašnjeni kroz jednostavan primer što olakšava razumevanje rada.
+\item Da li je za razumevanje teksta potrebno predznanje i u kolikoj meri?\\
+Potrebno je predznanje, ali ne u velikoj meri. Potrebno je osnovno poznavanje Python-a, rada u terminalu i kako funkcioniše pozivanje funkcija.
+\item Da li je u radu navedena odgovarajuća literatura?\\
+Mislim da literatura pod rednim brojem 5 nije odgovarajuća za naučni rad, jer je to blog, pa je moguće da tekst nije prošao odgovarajuću recenziju, ali da je sve ostalo u redu.\\
+\odgovor{Referenca je izbačena.}
+\item Da li su u radu reference korektno navedene?\\
+Reference u radu jesu korektno navedene, ali mislim da bi bilo korisno za knjigu pod rednim brojem 13: Gabriele Lanaro, Python high performance programming navesti strane, na primer u fusnoti, pošto se na ovu knjigu referiše više puta u radu.\\
+\odgovor{Bilo je napisano u bibtexu ali iz nekog razloga nije pisalo u literaturi. Ispravljeno.}
+\item Da li je struktura rada adekvatna?\\
+Struktura rada je adekvatna. Rad sadrži sažetak, uvod, razradu i zaključak koji su u skladu sa pravilima i sugestijama za pisanje seminarskog rada. Tekst je podeljen na pasuse, koji podržavaju pravila, jedan pasus, jedna ideja, osim poslednjeg pasusa u trećem poglavlju Načini profajliranja u jeziku Python, za koji mislim da bi trebalo da bude deo prethodnog pasusa jer sadrži opise modula pomenutih u prethodnom pasusu, a opis svakog modula se sastoji iz jedne rečenice, stoga nema potrebe izdvajati te opise u poseban pasus.\\
+\odgovor{Ispravljeno.}
+\item Da li rad sadrži sve elemente propisane uslovom seminarskog rada (slike, tabele, broj strana...)?\\
+Rad sadrži sve elemente propisane uslovom seminarskog rada, ima osam slika od kojih je jedna barplot, dve tabele od kojih se jedna nalazi u dodatku, ukupno 14 strana od kojih su poslednje 2 dodatak.
+\item Da li su slike i tabele funkcionalne i adekvatne?\\
+Slike i tabele jesu funkcionalne i adekvatne. Sedam slika u radu su primeri rada opisanih alata, visokog su kvaliteta i na adekvatan način je na njih referisano u tekstu. Jedna slika predstavlja barplot kojom su predstavljena vremena izvršavanja istog programa na 4 različita računara, slika je jasna i njom su na adekvatan način predstavljeni željeni podaci. Naslovi iznad tabela i slika ne treba da sadrže tačku na kraju.\\
+\odgovor{Tačke u naslovima tabela, slika i kodova su uklonjene.}
+\end{enumerate}
+
+\section{Ocenite sebe}
+% Napišite koliko ste upućeni u oblast koju recenzirate: 
+% a) ekspert u datoj oblasti
+% b) veoma upućeni u oblast
+% c) srednje upućeni
+% d) malo upućeni 
+% e) skoro neupućeni
+% f) potpuno neupućeni
+% Obrazložite svoju odluku
+d) malo upućeni, zato što nisam imala prilike da radim sa profajlerima u Python-u, ali sam upoznata sa profajliranjem generalno.
+
+\chapter{Recenzent \odgovor{--- ocena: 4} }
+
+
+\section{O čemu rad govori?}
+% Напишете један кратак пасус у којим ћете својим речима препричати суштину рада (и тиме показати да сте рад пажљиво прочитали и разумели). Обим од 200 до 400 карактера.
+Profajliranje je proces koji za cilj ima smanjenje vremenske i memorijske zahtevnosti programa. Profajleri automatizuju taj proces i daju povratne informacije o izvršavanju programa. Vremensko profajliranje u Pajtonu se postiže korišćenjem modula time, timeit, profile, hotshot, cProfile a za vizualizaciju rezultata profajliranja koriste se alati Py-Spy, SnakeViz, Pycallgraph, Gprof2dot i Vprof.
+
+
+
+%Korisničko se odnosi na vreme koje je proces proveo na procesoru, sistemsko na vreme utošeno na alokaciju memorije a stvarno predstavlja ukpno vreme potrebno da se program izvrši. 
+
+\section{Krupne primedbe i sugestije}
+% Напишете своја запажања и конструктивне идеје шта у раду недостаје и шта би требало да се промени-измени-дода-одузме да би рад био квалитетнији.
+Jedno od pitanja na koje je trebalo odgovoriti u radu bilo je to koje su specifičnosti profajliranja u programskom jeziku Pajton. U radu nije pronađen odgovor na to pitanje. Nije napisano kako osobine programskog jezika Pajton utiču na način profajliranja koda pisanog u tom jeziku. Da li je visoka apstraktnost jezika problematična kada je reč o memorijskoj i vremenskoj efikasnosti, odnosno da li složene strukture jezika koje omogućavaju udobno programiranje iziskuju dodatne vremenske i memorijske resurse? Ili to možda nije slučaj? Takođe, imajući u vidu apstraktnost jezika, da li se kod pisan u Pajtonu prevodi direktno na mašinski kod ili postoji neki međujezik čije je poznavanje neophodno da bi se napisao optimalan program? Sugestija je da se napiše dodatna sekcija nakon opšte priče o profajliranju u kojoj bi se dali odgovori na ovakva pitanja, odnosno ukazalo na to kako osobine jezika utiču na optimalnost koda pisanog u njemu.\\
+\odgovor{Dodat je jedan pasus na početku treće glave koji ulazi u specifičnosti profajliranja u programskom jeziku Python.}
+
+Zaključak deluje preobimno. U prvom pasusu zaključka su navedeni alati za profajliranje i vizualizaciju koji su obrađeni u okviru rada, ali to je već pomenuto u uvodu pa je sugestija da se taj pasus izbaci jer ne bi trebalo ponavljati stvari iz uvoda. Isto to važi i za drugi pasus zaključka, gde se ponavlja priča iz uvoda o nameni samih profajlera i značaju profajliranja u razvoja softvera. Treći pasus zaključka je dobar jer čitaocu daje smernice za dalje istraživanje. Generalna sugestija za zaključak je da treba izbaciti delove koji se ponavljaju u uvodu a ostaviti rečenicu ili dve o celokupnom radu, kao jedan vid vrlo kratkog rezimea rada, i smernice za dalje istraživanje.\\
+\odgovor{Izbačeni su delovi u kojima se ponavlja ono što je već rečeno u uvodu. Ostavljene su najznačajnije karakteristike profajliranja kako bi se na njih dodatno skrenula pažnja čitaoca, kao i smernice za dalje istraživanje.}
+
+
+\section{Sitne primedbe}
+% Напишете своја запажања на тему штампарских-стилских-језичких грешки
+Stil pisanja je ujednačen tokom čitavog rada. Ne primećuje se da su rad pisale četiri osobe. Rečenice su pisane u pasivu tokom čitavog rada a jezičkih grešaka nema. Takođe, nisu pronađene ni štamparske greške. U sekciji 4 svi alati su objašnjeni na isti način. Jedina greška koja je uočena je u rečenici \emph{"Na slici 5 je dat primer koda nad kojim se testiraju vizualizacije"}, u sekciji 4.2.2. Slika 5 ne prikazuje kod već vizualizaciju dobijenu alatom SnakeViz.\\
+\odgovor{Rečenica nije bila lepo formulisana. Izmenjena je.}
+
+\section{Provera sadržajnosti i forme seminarskog rada}
+% Oдговорите на следећа питања --- уз сваки одговор дати и образложење
+
+\begin{enumerate}
+\item Da li rad dobro odgovara na zadatu temu?\\
+Rad dobro odgovara na pitanja o tome šta je profajliranje, kako se profajliraju programi pisani u Pajtonu i koji su najznačajniji alati koji mogu pomoći u profajliranju programa pisanog u jeziku Pajton, korz sekcije 2, 3 i 4, ali se ne sugreiše na to kako specifičnosti jezika utiču na profajliranje.
+
+\item Da li je nešto važno propušteno?\\
+Kao što je već pomenuto, nije dat odogovor na pitanje kako osobine programskog jezika Pajton utiču na način profajliranja koda pisanog u njemu.
+
+\item Da li ima suštinskih grešaka i propusta?\\
+Propusti su već pomenuti a suštinskih grešaka nema. Ono o čemu rad govori jeste deo zadate teme, iz razloga što opisuje profajliranje generalno, načine profajliranja u programskom jeziku Pajton kao i najznačajnije alate koji se u te svrhe koriste. Uvod, apstrakt i naslov takođe sugerišu na zadatu temu.
+
+
+\item Da li je naslov rada dobro izabran?\\
+Imajući u vidu ono o čemu rad govori, a to su profajleri uopšte i alati za profajliranje programa pisanog u programskom jeziku Pajton, naslov je dobro izabran. Međutim kako u radu nema priče o osobinama programskog jezika Pajton i njihovom uticaju na način profajliranja, možda bi nakon dodavanja tog dela nasov treblao promeniti tako da sugeriše i na taj deo rada.\\
+\odgovor{Dodat je jedan pasus o osobinama jezika, ali smatramo da to nije dovoljno da bi se naslov rada menjao da sugeriše i na taj deo.}
+
+
+\item Da li sažetak sadrži prave podatke o radu?\\
+Sažetak sadrži sve ono o čemu je pisano u radu. Sugerisano je na to da će kroz rad čitalac biti upoznat sa različitim alatima za profajliranje programa pisanog u programskom jeziku Pajton kao i na to da će se obrazložiti motivacija za korišćenje profajlera, što je u radu i učinjeno.
+
+\item Da li je rad lak-težak za čitanje?\\
+Rad je većinski lak za čitanje, ali je početak sekcije 3 konfuzan jer se referiše na različite primere koda u okviru rada, slike i tabele i opisuju se dva različita pojma sa istim imenom (modul time i UNIX komanda time), sve to u okviru istog pasusa, pa je neophodna malo veća koncentracija da se taj deo isprati.\\
+\odgovor{Razbijen je deo za modul time i UNIX komandu na dva pasusa. Malo je promenjen redosled reči u rečenicama.}
+
+
+\item Da li je za razumevanje teksta potrebno predznanje i u kolikoj meri?\\
+Potrebo je predznanje, ne nužno iz programskog jezika Pajton, o osnovnim konceptima imperativnog programiranja ali i o nekim složenijim pojmovima kao što su rekurzija i repna rekurzija. Takođe, neophodon je poznavanje lambda izraza i sintakse u jeziku Pajton za pisanje istih. Razlog tome je činjenica da se rad bazira na nekoliko različitih primera koda nad kojima je vršeno profajliranje, pa je neophodno razumeti kod kako bi se razumeli i rezultati samog profajliranja.
+
+\item Da li je u radu navedena odgovarajuća literatura?\\
+U radu je navedena odgovarajuća literatura. Postoje reference na različite naučne radove, zatim knjige i članke, kao i reference na zavničnu dokumentaciju pomenutih alata i GitHub repozitorijume na kojima se ti projekti nalaze.
+
+\item Da li su u radu reference korektno navedene?\\
+Reference su korektno navedene. Navedene su nakon tvrdnji, definicija ili pasusa preuzetih iz literature, zatim nakon navođenja različitih kvantifikatora i kao smernice za dalje istraživanje. Međutim postoji nekoliko mesta na kojima je propušteno navođenje referenci:\\
+- u uvodu je rečeno koji su \emph{"najpoznatiji alati"} što bi trebalo potvrditi referencom na odgovarajuću literaturu\\
+- u sekciji 2 bi trebalo navesti referencu na literaturu iz koje je preuzeta podela na determinističke i statističke profajlere\\
+- u sekciji 3, pre početka podsekcije 3.1, navedena je konstatacija da je modul cProfile \emph{"najkorišćenij"}  i da se \emph{"najviše alata oslanja na njega"}, za šta bi trebalo navesti referencu na odgovarajuću literaturu\\
+- u sekciji 3.1 na mestu gde se prvi put pominje klasa \emph{Stats} bi trebalo navesti referencu na literaturu sa detaljima o toj klasi iako je kasnije navedena referenca na literaturu sa detaljima o metodama te klase\\
+- u sekciji 3.1 pomenuto je da \emph{"modul pstat sadrži veliki broj mogućnosti za filtriranje dobijenih rezultata"} što bi trebalo potvrditi referencom na literaturu sa detaljima o ovom modulu\\
+\odgovor{Za stavke poput "najpoznatiji alati"\ i "najkorišćeniji"\ ne postoji pravi dokaz za to tako da su te tvrdnje izbačene. Za ostale stavke su dodate reference.}
+
+\item Da li je struktura rada adekvatna?\\
+Struktura rada jeste adekvatna. Nakon apstrakta i uvoda, sledi opšta priča o profajliranju. Zatim se prelazi na opisivanje alata koji omogućavaju profajliranje u programskom jeziku Pajton (sekcija 3) a nakon toga sledi priča o alatima za vizualizaciju rezultata profajliranja (sekcija 4) koja se nadovezuje na prethodnu sekciju. Slike i tabele su postavljene na odgovarajućim mestima kroz sekcije 3 i 4, imajući u vidu tehnička ograničenja. Nakon zaključka, u dodatku A, priloženi su primeri kodova nad kojima je vršeno profajliranje.
+
+\item Da li rad sadrži sve elemente propisane uslovom seminarskog rada (slike, tabele, broj strana...)?\\
+Rad sadrži sve potrebne elemente. Postoji devet različitih slika kao i dve tabele. Takođe, kododvi i komande su uredno navedeni na zahtevani način. Rad ima četrnaest strana, ali imajući u vidu da dodatak sa kodovima zauzima poslednje dve strane, to je zadovoljavajuć broj.
+
+\item Da li su slike i tabele funkcionalne i adekvatne?\\
+Kao što je pomenuto, postoji devet različitih slika koje ilustruju procese profajliranja i vizualizacije rezultata profajliranja, kao i dve tabele od kojih se u prvoj mogu pročitati dodatne informacije o argumentima alata cProfile a druga tabela sadrži karakteristike sistema na kojima se vršilo profajliranje primera kodova. Slike adekvatno ilustruju rezultate profajliranja i čitke su. Tabela sa karakteristikama sistema je dobra ideja jer daje jasniji uvid u rezultate profajliranja, ali tabela sa dodatnim argumentima je suvišna i možda bi je trebalo zameniti tabelom sa nekim drugim informacijama, jer se oni mogu naći u literaturi ukoliko su čitaocu potrebni.\\
+\odgovor{Smatramo da tabela prikazuje relevantne informacije. Tačno je da sve one mogu da se nađu na drugom mestu ali ovde su pristupačnije. Takođe, drugi recenzenti smatraju da je tabela korisna.}
+
+\end{enumerate}
+
+\section{Ocenite sebe}
+% Napišite koliko ste upućeni u oblast koju recenzirate: 
+% a) ekspert u datoj oblasti
+% b) veoma upućeni u oblast
+% c) srednje upućeni
+% d) malo upućeni 
+% e) skoro neupućeni
+% f) potpuno neupućeni
+% Obrazložite svoju odluku
+U oblast koju recenziram sam malo upućen. Upućen sam u opšte koncepte profajliranja i načine ne koje se program pisan na visoko apstraktnom jeziku može optimizovati uz pomoć profajlera budući da je tema seminarskog rada u čijem sam pisanju učestvovao bila profajliranje Haskell programa. Takođe, poznajem osobine programskog jezika Pajton i imam iskustva u pisanju programa na tom jeziku zahvaljujući kursevima na osnovnim studijama kroz koje se ovaj jezik obrađuje. Međutim, nemam nikakvih znanja o alatima koji se koriste za profajliranje Pajton programa niti iskustva u pisanju većih i ozbiljnijih projekata u ovom jeziku.
+
+
+
+\chapter{Dodatne izmene}
+%Ovde navedite ukoliko ima izmena koje ste uradili a koje vam recenzenti nisu tražili. 
+\begin{itemize}
+    
+\item U četvrtoj sekciji su izbačeni naslovi koji su se odnosili na karakteristike i primene alata. Ovo je urađeno iz razloga što te podsekcije nisu bile dovoljno velike, nisu ni bile zasebna celina, a i iz razloga što su recenzenti naveli da ne treba numerisati te podsekcije jer se ne navode u sadržaju.
+
+\item Objašnjena je razlika između {\em Icicle} i {\em Sunburst} formata kod alata SnakeViz.
+
+\item Naslov tabele 2 je stavljen da bude iznad tabele (bio je ispod tabele). Takođe, naslovi tabele 2 i slike 2 su dopunjeni tako da se referiše na kod na koji se odnose.
+
+\end{itemize}
+
+\end{document}
