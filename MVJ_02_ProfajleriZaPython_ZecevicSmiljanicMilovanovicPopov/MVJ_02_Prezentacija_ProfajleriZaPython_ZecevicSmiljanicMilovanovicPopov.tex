@@ -56,10 +56,9 @@
 % Here's where the presentation starts, with the info for the title slide
 \title[Profajleri za Python]{Profajleri i njihova vizualizacija \\ za jezik Python}
 
-\author[Matematički fakultet]{Anđelka Milovanović, David Popov \\
-Jelisaveta Smiljanić, Petar Zečević \\}
+\author[Matematički fakultet]{Anđelka Milovanović, David Popov \\ Jelisaveta Smiljanić, Petar Zečević}
 
-\institute[Matematički fakultet]{\tinysmall{Seminarski rad u okviru kursa\\Metodologija stručnog i naučnog rada\\ \\}\tinysmall{Matematički fakultet}}
+\institute[]{\tinysmall{Seminarski rad u okviru kursa\\Metodologija stručnog i naučnog rada \\} \tinysmall{Matematički fakultet}}
 
 \date{\today}
 
@@ -70,7 +69,7 @@ Jelisaveta Smiljanić, Petar Zečević \\}
 \begingroup
 \setbeamertemplate{footline}{}
 \begin{frame}
-\titlepage
+    \titlepage 
 \end{frame}
 \endgroup
 
@@ -112,7 +111,7 @@ Jelisaveta Smiljanić, Petar Zečević \\}
 \begin{frame}{Moduli cProfile i pstats}
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[scale=0.4]{MVJ_02_ProfajleriZaPython_ZecevicSmiljanicMilovanovicPopov/cProfile_without_import.png}
+\includegraphics[scale=0.4]{cProfile_without_import.png}
 \end{center}
 \caption{cProfile izveštaj}
 \label{fig:ps_viz}
@@ -147,7 +146,7 @@ ps = pstats.Stats(prof, stream=s).sort\_stats(sortby)
 \begin{frame}{Py-Spy}
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[scale=0.25]{MVJ_02_ProfajleriZaPython_ZecevicSmiljanicMilovanovicPopov/ps.png}
+\includegraphics[scale=0.25]{ps.png}
 \end{center}
 \caption{Py-Spy vizualizacija}
 \label{fig:ps_viz}
@@ -185,7 +184,7 @@ ps = pstats.Stats(prof, stream=s).sort\_stats(sortby)
 \begin{frame}{Gprof2dot}
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[scale=0.37]{MVJ_02_ProfajleriZaPython_ZecevicSmiljanicMilovanovicPopov/gprof2dot.png}
+\includegraphics[scale=0.37]{gprof2dot.png}
 \end{center}
 \caption{Gprof2dot vizualizacija}
 \label{fig:gprof2dot_1}
@@ -195,7 +194,7 @@ ps = pstats.Stats(prof, stream=s).sort\_stats(sortby)
 \begin{frame}{Vprof}
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[trim={0cm 20cm 0cm 0cm},clip,scale=0.21]{MVJ_02_ProfajleriZaPython_ZecevicSmiljanicMilovanovicPopov/vprof.png}
+\includegraphics[trim={0cm 20cm 0cm 0cm},clip,scale=0.21]{vprof.png}
 \end{center}
 \caption{Vprof vizualizacija}
 \label{fig:vprof_1}
